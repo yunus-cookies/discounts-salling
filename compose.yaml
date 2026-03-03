@@ -1,0 +1,25 @@
+services:
+
+  db:
+    image: postgres:18.1
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: discounts-salling-postgres-admin
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: discounts-salling-postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

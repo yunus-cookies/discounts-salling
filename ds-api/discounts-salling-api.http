@@ -1,0 +1,6 @@
+@discounts_salling_api_HostAddress = http://localhost:5295
+
+GET {{discounts_salling_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
